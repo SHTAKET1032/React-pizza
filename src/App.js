@@ -1,8 +1,15 @@
+import React from "react";
+
 import Header from "./components/header/Header"
 import Categories from "./components/categories/Categories"
 import Sort from "./components/sort/Sort"
 import PizzaBlock from "./components/pizzaBlock/PizzaBlock"
+
 import "./scss/app.scss";
+
+import  pizzas from "./assets/pizzas.json"
+
+
 
 function App() {
     return (
@@ -16,9 +23,18 @@ function App() {
                     </div>
                     <h2 className="content__title">Все пиццы</h2>
                     <div className="content__items">
-                        <PizzaBlock/>
-                        <PizzaBlock/>
-                        <PizzaBlock/>
+                        {
+                            pizzas.map((pizza) => (
+                                <PizzaBlock
+                                    // img={pizza.imageUrl}
+                                    // title={pizza.title}
+                                    // types={pizza.types}
+                                    // sizes={pizza.sizes}
+                                    // price={pizza.price}
+                                    {...pizza}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
             </div>
