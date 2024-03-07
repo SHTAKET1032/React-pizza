@@ -7,13 +7,20 @@ import PizzaBlock from "./components/pizzaBlock/PizzaBlock"
 
 import "./scss/app.scss";
 
-import  pizzas from "./assets/pizzas.json"
-
 
 
 
 
 function App() {
+
+    const [pizzas, setPizzas] = React.useState([])
+
+    React.useEffect(() => {
+        fetch("https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas")
+            .then((response) => response.json())
+            .then((response) => setPizzas(response))
+    }, [])
+
     return (
         <div className="wrapper">
             <Header/>
@@ -28,11 +35,7 @@ function App() {
                         {
                             pizzas.map((pizza) => (
                                 <PizzaBlock
-                                    // img={pizza.imageUrl}
-                                    // title={pizza.title}
-                                    // types={pizza.types}
-                                    // sizes={pizza.sizes}
-                                    // price={pizza.price}
+                                    key={pizza.id}
                                     {...pizza}
                                 />
                             ))
