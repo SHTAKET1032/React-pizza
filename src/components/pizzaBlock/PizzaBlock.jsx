@@ -6,13 +6,14 @@ const PizzaBlock = ({imageUrl, title, types, sizes, price}) => {
     const [activeType, setActiveType] = React.useState(0)
     const [activeSize, setActiveSize] = React.useState(0)
 
+
     return(
             <div className="pizza-block">
             <img
                 className="pizza-block__image"
                 src={imageUrl}
                 alt="Pizza"
-            />ер-пицца
+            />
             <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
