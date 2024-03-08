@@ -1,5 +1,5 @@
 import React from "react";
-const PizzaBlock = ({imageUrl, title, types, sizes, price}) => {
+const Index = ({imageUrl, title, types, sizes, price}) => {
 
     const typeNames = ["тонкое", "традиционное"]
 
@@ -64,4 +64,4 @@ const PizzaBlock = ({imageUrl, title, types, sizes, price}) => {
     )
 }
 
-export default PizzaBlock;
+export default Index;
