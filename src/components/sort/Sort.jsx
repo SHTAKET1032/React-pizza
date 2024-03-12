@@ -1,14 +1,21 @@
 import React from "react";
 
-const Sort = () => {
+const Sort = ({value, setSortingId}) => {
 
     const [openPopup, setOpenPopup] = React.useState(false)
-    const [activeSorting, setActiveSorting] = React.useState(0)
 
-    const sortings = ["популярности", "цене", "алфавиту"]
 
-    const onClickSort = (index) => {
-        setActiveSorting(index)
+    const sortings = [
+        {name: "популярности (DESC)", sortProperty: "rating"},
+        {name: "популярности (ASC)", sortProperty: "-rating"},
+        {name: "цене (DESC)", sortProperty: "price"},
+        {name: "цене (ASC)", sortProperty: "-price"},
+        {name: "алфавиту (DESC)", sortProperty: "title"},
+        {name: "алфавиту (ASC)", sortProperty: "-title"}
+    ]
+
+    const onClickSort = (value) => {
+        setSortingId(value)
         setOpenPopup(false)
     }
 
@@ -30,18 +37,18 @@ const Sort = () => {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setOpenPopup(!openPopup)}>{sortings[activeSorting]}</span>
+                <span onClick={() => setOpenPopup(!openPopup)}>{value.name}</span>
             </div>
             {
                 openPopup && (
                     <div className="sort__popup">
                         <ul>
                             {
-                                sortings.map((sort, index) => (
+                                sortings.map((obj, index) => (
                                     <li key={index}
-                                        onClick={() => onClickSort(index)}
-                                        className={activeSorting === index ? "active" : ""}>
-                                        {sort}
+                                        onClick={() => onClickSort(obj)}
+                                        className={value.sortProperty === obj.sortProperty? "active" : ""}>
+                                        {obj.name}
                                     </li>
                                 ))
                             }

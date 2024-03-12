@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from "./index.module.scss"
+import styles from "./NotFoundBlock.module.scss"
 
 
-const index = () => {
+const NotFoundBlock = () => {
     return(
         <div className={styles.root}>
             <h1>Ничего не найдено</h1>
@@ -12,4 +12,4 @@ const index = () => {
     )
 }
 
-export default index;
+export default NotFoundBlock;
