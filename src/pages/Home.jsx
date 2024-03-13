@@ -6,15 +6,18 @@ import PizzaBlock from "../components/pizzaBlock/PizzaBlock"
 import PizzaLoader from "../components/pizzaBlock/PizzaLoader"
 
 
-const Home = () => {
+const Home = ({inputValue}) => {
 
-    const [pizzas, setPizzas] = React.useState([])
+    console.log("FROM HOME",inputValue)
+
+    const [data, setData] = React.useState([])
     const [isLoading, setIsloading] = React.useState(true)
     const [categoryId, setCategoryId] = React.useState(0)
     const [sortingType, setSortingType] = React.useState({
         name: "популярности (DESC)",
         sortProperty: "rating"
     })
+
 
 
     React.useEffect(() => {
@@ -27,11 +30,20 @@ const Home = () => {
         fetch(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}`)
             .then((response) => response.json())
             .then((response) => {
-                setPizzas(response)
+                setData(response)
                 setIsloading(false)
             })
     }, [categoryId, sortingType])
 
+
+    const loader = [...new Array(10)].map((_, index) => <PizzaLoader key={index}/>);
+    const pizzas = data.filter((obj) => {
+        if(obj.title.toLowerCase().includes(inputValue.toLowerCase())){
+            return true
+        } else {
+            return false
+        }
+    }).map((item) => <PizzaBlock key={item.id}{...item}/>);
 
     return (
         <>
@@ -41,11 +53,7 @@ const Home = () => {
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-                {
-                    isLoading
-                        ? [...new Array(10)].map((_, index) => <PizzaLoader key={index}/>)
-                        : pizzas.map((pizza) => <PizzaBlock key={pizza.id}{...pizza}/>)
-                }
+                {isLoading ? loader : pizzas}
             </div>
         </>
     )

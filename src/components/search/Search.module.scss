@@ -1,0 +1,30 @@
+.searchContainer{
+  position: relative;
+  .iconSearch{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    left: 15px;
+  }
+  .input{
+    padding: 10px 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    &:focus{
+      border: 2px solid black;
+    }
+  }
+  .iconClose{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 15px;
+    opacity: 0.3;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
