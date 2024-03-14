@@ -1,14 +1,15 @@
 import React from "react";
+import {SearchContext} from "../App"
 
 import Categories from "../components/categories/Categories"
 import Sort from "../components/sort/Sort"
 import PizzaBlock from "../components/pizzaBlock/PizzaBlock"
 import PizzaLoader from "../components/pizzaBlock/PizzaLoader"
-import Pagination from "../components/paginationBlock/PaginationBlock"
 
 
 
-const Home = ({inputValue}) => {
+
+const Home = () => {
 
 
     const [data, setData] = React.useState([])
@@ -18,7 +19,7 @@ const Home = ({inputValue}) => {
         name: "популярности (DESC)",
         sortProperty: "rating"
     })
-    const [selectedPage, setSelectedPage] = React.useState(1)
+    const {inputValue} = React.useContext(SearchContext)
 
 
 
@@ -30,14 +31,13 @@ const Home = ({inputValue}) => {
         const order = sortingType.sortProperty.includes("-") ? "asc" : "desc";
         const search = `&search=${inputValue}`;
 
-        fetch(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?page=${selectedPage}&limit=4${category}&sortBy=${sortBy}&order=${order}${search}`)
+        fetch(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}${search}`)
             .then((response) => response.json())
             .then((response) => {
                 setData(response)
                 setIsloading(false)
             })
-        console.log("СРАБОТАЛ USEEFFECT")
-    }, [categoryId, sortingType, inputValue, selectedPage])
+    }, [categoryId, sortingType, inputValue])
 
 
     const loader = [...new Array(10)].map((_, index) => <PizzaLoader key={index}/>);
@@ -54,7 +54,6 @@ const Home = ({inputValue}) => {
             <div className="content__items">
                 {isLoading ? loader : pizzas}
             </div>
-            <Pagination handleClick={(nmb) => setSelectedPage(nmb)}/>
         </>
     )
 }
