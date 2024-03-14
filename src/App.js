@@ -16,7 +16,6 @@ import "./scss/app.scss";
 function App() {
 
     const [inputValue, setInputValue] = React.useState("")
-    console.log("FROM APP",inputValue)
 
     return (
         <div className="wrapper">
