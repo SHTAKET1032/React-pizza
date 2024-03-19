@@ -6,7 +6,13 @@ import styles from "./Search.module.scss"
 
 const Search = () => {
 
-    const {inputValue, setInputValue} = React.useContext(SearchContext)
+    const {inputValue, setInputValue} = React.useContext(SearchContext);
+    const inputRef = React.useRef();
+
+    const clearSearch = () => {
+        setInputValue("");
+        inputRef.current.focus();
+    }
 
     return (
         <div className={styles.searchContainer}>
@@ -20,13 +26,14 @@ const Search = () => {
                 <path className="cls-1" d="M10,4a6.006,6.006,0,0,0-6,6,1,1,0,0,0,2,0,4,4,0,0,1,4-4,1,1,0,0,0,0-2Z"/>
             </svg>
             <input
+                ref={inputRef}
                 value={inputValue}
                 onChange={event => setInputValue(event.target.value)}
                 className={styles.input}
                 placeholder="Ведите название..."/>
             {inputValue &&
                 <svg
-                onClick={() => setInputValue("")}
+                onClick={() => clearSearch()}
                 className={styles.iconClose}
                 height="512px"
                 id="Layer_1"
