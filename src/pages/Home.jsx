@@ -29,8 +29,6 @@ const Home = () => {
 
 
     React.useEffect(() => {
-        console.log("this value from HOME:", valueForSearch)
-
 
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const sortBy = sortingType.sortProperty.replace("-", "");

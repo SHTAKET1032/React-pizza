@@ -25,8 +25,8 @@ const Search = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const onChangeGlobalInput = React.useCallback(
-        debounce((value) => {
-            setValueForSearch(value);
+        debounce((str) => {
+            setValueForSearch(str);
         }, 500),
         []
     )

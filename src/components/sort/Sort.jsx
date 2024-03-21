@@ -13,13 +13,31 @@ const sortings = [
     {name: "алфавиту (ASC)", sortProperty: "-title"}
 ]
 
-const Sort = ({value, onClickSortType}) => {
+const Sort = () => {
 
     const dispatch = useDispatch();
     const sortingType = useSelector((state) => state.filter.sortingType)
 
 
     const [openPopup, setOpenPopup] = React.useState(false)
+    const sortRef = React.useRef();
+
+    React.useEffect(() => {
+            const handleClickOutside = (event) => {
+                if (!event.composedPath().includes(sortRef.current)) {
+                    setOpenPopup(false)
+                }
+            }
+
+            document.body.addEventListener("click", handleClickOutside);
+
+            return () => {
+                document.body.removeEventListener("click", handleClickOutside);
+            }
+
+        },
+        []
+    )
 
 
     const onClickSort = (sortingType) => {
@@ -29,7 +47,9 @@ const Sort = ({value, onClickSortType}) => {
 
 
     return (
-        <div className="sort">
+        <div
+            className="sort"
+            ref={sortRef}>
             <div className="sort__label">
                 <svg
                     width="10"
@@ -44,7 +64,7 @@ const Sort = ({value, onClickSortType}) => {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setOpenPopup(!openPopup)}>{sortingType.name}</span>
+                <span onClick={() => setOpenPopup(true)}>{sortingType.name}</span>
             </div>
             {
                 openPopup && (
