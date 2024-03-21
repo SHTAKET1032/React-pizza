@@ -19,7 +19,8 @@ const Home = () => {
     const sortingType = useSelector((state) => state.filter.sortingType)
     const [data, setData] = React.useState([])
     const [isLoading, setIsloading] = React.useState(true)
-    const {inputValue} = React.useContext(SearchContext)
+    const {valueForSearch} = React.useContext(SearchContext)
+
 
 
     const onClickCategory = (id) => {
@@ -28,28 +29,32 @@ const Home = () => {
 
 
     React.useEffect(() => {
+        console.log("this value from HOME:", valueForSearch)
 
 
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const sortBy = sortingType.sortProperty.replace("-", "");
         const order = sortingType.sortProperty.includes("-") ? "asc" : "desc";
-        const search = `&search=${inputValue}`;
 
         async function fetchData(){
             try{
                 setIsloading(true);
 
-                const dataResponse = await axios.get(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}${search}`)
-
-                setIsloading(false);
-                setData(dataResponse.data)
+                await axios
+                    .get(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}&search=${valueForSearch}`)
+                    .then((response) => {
+                        setIsloading(false);
+                        setData(response.data)
+                    })
             } catch (error) {
                 alert("Ошибка при запросе данных ;(");
                 console.error(error);
             }
         }
         fetchData();
-    }, [categoryId, sortingType, inputValue])
+
+
+    }, [categoryId, sortingType, valueForSearch])
 
 
     const loader = [...new Array(10)].map((_, index) => <PizzaLoader key={index}/>);

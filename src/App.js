@@ -15,11 +15,11 @@ export const SearchContext = React.createContext()
 
 function App() {
 
-    const [inputValue, setInputValue] = React.useState("")
+    const [valueForSearch, setValueForSearch] = React.useState("")
 
 
     return (
-        <SearchContext.Provider value={{inputValue, setInputValue}}>
+        <SearchContext.Provider value={{valueForSearch, setValueForSearch}}>
             <div className="wrapper">
                 <Header/>
                 <div className="content">
