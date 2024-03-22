@@ -34,7 +34,6 @@ const Sort = () => {
             return () => {
                 document.body.removeEventListener("click", handleClickOutside);
             }
-
         },
         []
     )
