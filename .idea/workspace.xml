@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="023209a9-a4e4-4987-8b81-1fc226f6ae02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sort/Sort.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort/Sort.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,8 @@
       <workItem from="1711004505918" duration="19294000" />
       <workItem from="1711040450650" duration="923000" />
       <workItem from="1711093767463" duration="4310000" />
-      <workItem from="1711109522411" duration="6644000" />
+      <workItem from="1711109522411" duration="7055000" />
+      <workItem from="1711282234466" duration="11146000" />
     </task>
     <servers />
   </component>
