@@ -13,9 +13,6 @@ export const cartSlice = createSlice({
 
         addItem(state, action) {
             const findItem = state.items.find((obj) => obj.id === action.payload.id);
-            console.log("Это action С ГЛАВНОЙ СТРАНИЦЫ", action)
-            console.log("Это actionPayload С ГЛАВНОЙ СТРАНИЦЫ", action.payload)
-            console.log("Это findItem С ГЛАВНОЙ СТРАНИЦЫ", findItem)
             if (findItem) {
                 findItem.count++;
             } else {
@@ -29,11 +26,8 @@ export const cartSlice = createSlice({
             }, 0)
         },
         plusCountItem(state, action) {
-            console.log("Это action ИЗ КОРЗИНЫ", action)
-            console.log("Это actionPayload ИЗ КОРЗИНЫ", action.payload)
+
             const findItem = state.items.find((obj) => obj.id === action.payload);
-            console.log("Это findItem ИЗ КОРЗИНЫ", findItem)
-            console.log("Это state ИЗ КОРЗИНЫ", state)
 
             if (findItem) {
                 findItem.count++;

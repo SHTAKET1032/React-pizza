@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="023209a9-a4e4-4987-8b81-1fc226f6ae02" name="Changes" comment="">
+    <list default="true" id="023209a9-a4e4-4987-8b81-1fc226f6ae02" name="Changes" comment="feat: add cart logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
@@ -78,11 +78,24 @@
       <workItem from="1711040450650" duration="923000" />
       <workItem from="1711093767463" duration="4310000" />
       <workItem from="1711109522411" duration="7055000" />
-      <workItem from="1711282234466" duration="11146000" />
+      <workItem from="1711282234466" duration="11594000" />
+      <workItem from="1711352019116" duration="1946000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add cart logic">
+      <created>1711305798908</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711305798908</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add cart logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add cart logic" />
   </component>
 </project>
