@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="023209a9-a4e4-4987-8b81-1fc226f6ae02" name="Changes" comment="feat: add cart logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,8 @@
       <workItem from="1711093767463" duration="4310000" />
       <workItem from="1711109522411" duration="7055000" />
       <workItem from="1711282234466" duration="11594000" />
-      <workItem from="1711352019116" duration="1946000" />
+      <workItem from="1711352019116" duration="19109000" />
+      <workItem from="1711435474972" duration="6466000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add cart logic">
       <created>1711305798908</created>

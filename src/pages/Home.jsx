@@ -1,10 +1,10 @@
 import React from "react";
-import axios from "axios"
 
 import {SearchContext} from "../App"
 
 import {useSelector, useDispatch} from "react-redux"
 import {setCategoryId} from "../redux/slices/filterSlice"
+import {fetchPizzas} from "../redux/slices/pizzaSlice";
 
 import Categories from "../components/categories/Categories"
 import Sort from "../components/sort/Sort"
@@ -14,44 +14,28 @@ import PizzaLoader from "../components/pizzaBlock/PizzaLoader"
 
 const Home = () => {
 
-    const categoryId = useSelector((state) => state.filter.categoryId)
-    const dispatch = useDispatch()
-    const sortingType = useSelector((state) => state.filter.sortingType)
-    const [data, setData] = React.useState([])
-    const [isLoading, setIsloading] = React.useState(true)
-    const {valueForSearch} = React.useContext(SearchContext)
+    const {valueForSearch} = React.useContext(SearchContext);
 
+    const dispatch = useDispatch();
+    const categoryId = useSelector((state) => state.filter.categoryId);
+    const sortingType = useSelector((state) => state.filter.sortingType);
+    const {data, status} = useSelector((state) => state.pizza);
 
 
     const onClickCategory = (id) => {
         dispatch(setCategoryId(id))
     }
 
-
-    React.useEffect(() => {
-
+    const getPizzas = async () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const sortBy = sortingType.sortProperty.replace("-", "");
         const order = sortingType.sortProperty.includes("-") ? "asc" : "desc";
-
-        async function fetchData(){
-            try{
-                setIsloading(true);
-
-                await axios
-                    .get(`https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}&search=${valueForSearch}`)
-                    .then((response) => {
-                        setIsloading(false);
-                        setData(response.data)
-                    })
-            } catch (error) {
-                alert("Ошибка при запросе данных ;(");
-                console.error(error);
-            }
-        }
-        fetchData();
+        dispatch(fetchPizzas({category, sortBy, order, valueForSearch}));
+    }
 
 
+    React.useEffect(() => {
+        getPizzas();
     }, [categoryId, sortingType, valueForSearch])
 
 
@@ -66,9 +50,15 @@ const Home = () => {
                 <Sort/>
             </div>
             <h2 className="content__title">Все пиццы</h2>
-            <div className="content__items">
-                {isLoading ? loader : pizzas}
-            </div>
+            {status === "error" ? (
+                <div className="content_error-info">
+                    <h2>Произошла ошибка 😕 </h2>
+                    <p>Попробуйте чуть позже</p>
+                </div>) : (
+                <div className="content__items">
+                    {status === "loading" ? loader : pizzas}
+                </div>
+            )}
         </>
     )
 }

@@ -19,6 +19,8 @@ body {
 .content {
   padding: 40px 0;
 
+
+
   &__title {
     margin: 35px 0;
   }
@@ -33,6 +35,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+.content_error-info{
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    font-size: 20px;
   }
 }
 
