@@ -7,11 +7,9 @@
     <list default="true" id="023209a9-a4e4-4987-8b81-1fc226f6ae02" name="Changes" comment="feat: add cart logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filterSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzaSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1711109522411" duration="7055000" />
       <workItem from="1711282234466" duration="11594000" />
       <workItem from="1711352019116" duration="19109000" />
-      <workItem from="1711435474972" duration="12766000" />
+      <workItem from="1711435474972" duration="19700000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add cart logic">
       <created>1711305798908</created>
