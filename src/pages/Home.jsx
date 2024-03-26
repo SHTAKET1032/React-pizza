@@ -1,7 +1,4 @@
 import React from "react";
-
-import {SearchContext} from "../App"
-
 import {useSelector, useDispatch} from "react-redux"
 import {setCategoryId} from "../redux/slices/filterSlice"
 import {fetchPizzas} from "../redux/slices/pizzaSlice";
@@ -14,9 +11,8 @@ import PizzaLoader from "../components/pizzaBlock/PizzaLoader"
 
 const Home = () => {
 
-    const {valueForSearch} = React.useContext(SearchContext);
-
     const dispatch = useDispatch();
+    const valueForSearch = useSelector((state) => state.filter.valueForSearch);
     const categoryId = useSelector((state) => state.filter.categoryId);
     const sortingType = useSelector((state) => state.filter.sortingType);
     const {data, status} = useSelector((state) => state.pizza);

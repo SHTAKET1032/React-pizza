@@ -22,6 +22,7 @@ const PizzaBlock = ({id, imageUrl, title, types, sizes, price}) => {
             sizes: activeSize[setActiveSize]
         };
         dispach(addItem(item));
+        console.log(imageUrl)
     }
 
 

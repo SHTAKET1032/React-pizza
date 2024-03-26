@@ -2,7 +2,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
 
 
-export const fetchPizzas = createAsyncThunk('pizza/fetchPizzasStatus', async (params) => {
+export const fetchPizzas = createAsyncThunk( 'pizza/fetchPizzasStatus', async (params) => {
         const {category, sortBy, order, valueForSearch} = params;
         const {data} = await axios.get(
             `https://65e9a9c3c9bf92ae3d39d0d6.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}&search=${valueForSearch}`
