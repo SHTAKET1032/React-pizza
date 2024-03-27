@@ -3,10 +3,14 @@ import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 
 
-const FullPizza = () => {
+const FullPizza: React.FC = () => {
 
     const {id} = useParams();
-    const [pizza, setPizza] = React.useState();
+    const [pizza, setPizza] = React.useState<{
+        imageUrl: string,
+        title: string,
+        price: string
+    }>();
 
     React.useEffect(() => {
         const fetchPizza = async () =>{
@@ -20,8 +24,7 @@ const FullPizza = () => {
         fetchPizza();
     }, [])
 
-    console.log(pizza)
-
+    
   return(
       <>
           {!pizza ?
