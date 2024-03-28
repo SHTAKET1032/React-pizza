@@ -4,22 +4,21 @@ import {useDispatch} from "react-redux";
 
 import {setValueForSearch} from "../../redux/slices/filterSlice";
 
-// import {SearchContext} from "../../App"
 
 import styles from "./Search.module.scss"
 
 
-const Search = () => {
+const Search:React.FC = () => {
 
     const dispatch = useDispatch();
     const [localValue, setLocalValue] = React.useState("");
-    const inputRef = React.useRef();
+    const inputRef = React.useRef<HTMLInputElement>(null);
 
 
     const clearSearch = () => {
         dispatch(setValueForSearch(""));
         setLocalValue("");
-        inputRef.current.focus();
+        inputRef.current?.focus();
     }
 
 
@@ -31,7 +30,7 @@ const Search = () => {
         []
     )
 
-    const onChangeLocalInput = (event) => {
+    const onChangeLocalInput = (event: any) => {
         setLocalValue(event.target.value);
         onChangeGlobalInput(event.target.value)
     }
@@ -75,3 +74,5 @@ const Search = () => {
 
 
 export default Search;
+
+

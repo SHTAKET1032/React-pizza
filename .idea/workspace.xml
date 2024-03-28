@@ -8,9 +8,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FullPizza.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullPizza.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartItem/cartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartItem/cartItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/Categories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/notFoundBlock/NotFoundBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notFoundBlock/NotFoundBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizzaBlock/PizzaLoader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sort/Sort.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort/Sort.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FullPizza.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullPizza.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFound.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -49,7 +60,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "/Users/vasiliihome/Desktop/STUDING/react/Archakov/pizza/node_modules/typescript/lib"
   }
 }]]></component>
@@ -93,7 +104,8 @@
       <workItem from="1711282234466" duration="11594000" />
       <workItem from="1711352019116" duration="19109000" />
       <workItem from="1711435474972" duration="20648000" />
-      <workItem from="1711523407812" duration="8913000" />
+      <workItem from="1711523407812" duration="15167000" />
+      <workItem from="1711610147819" duration="7447000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add cart logic">
       <created>1711305798908</created>
@@ -107,6 +119,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add cart logic" />

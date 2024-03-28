@@ -7,14 +7,24 @@ import {clearCart} from "../redux/slices/cartSlice";
 
 import emptyCartImg from "../assets/img/empty-cart.png";
 
-const Cart = () => {
+const Cart:React.FC = () => {
+
+    type CartItemProp = {
+        id: string;
+        imageUrl: string;
+        title: string
+        price:number;
+        type: string;
+        sizes:number;
+        count:number;
+    }
     const dispach = useDispatch();
-    const totalPrice = useSelector((state) => state.cart.totalPrice);
-    const totalCount = useSelector((state) => state.cart.items.reduce((acc, item) => {
+    const totalPrice = useSelector((state: any) => state.cart.totalPrice);
+    const totalCount = useSelector((state: any) => state.cart.items.reduce((acc: number, item: CartItemProp) => {
             return acc + item.count;
         }, 0)
     );
-    const cartItems = useSelector((state) => state.cart.items);
+    const cartItems = useSelector((state: any) => state.cart.items);
 
 
     const omClickClearCart = () => {
@@ -59,7 +69,7 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="content__items">
-                        {cartItems.map((obj) => <CartItem key={obj.id} {...obj}/>)}
+                        {cartItems.map((obj: any) => <CartItem key={obj.id} {...obj}/>)}
                     </div>
                     <div className="cart__bottom">
                         <div className="cart__bottom-details">

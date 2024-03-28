@@ -4,7 +4,12 @@ import {useSelector, useDispatch} from "react-redux";
 import {setSortingType} from "../../redux/slices/filterSlice"
 
 
-const sortings = [
+type SortItem = {
+    name: string;
+    sortProperty: string;
+}
+
+const sortings:SortItem[] = [
     {name: "популярности (DESC)", sortProperty: "rating"},
     {name: "популярности (ASC)", sortProperty: "-rating"},
     {name: "цене (DESC)", sortProperty: "price"},
@@ -13,17 +18,17 @@ const sortings = [
     {name: "алфавиту (ASC)", sortProperty: "-title"}
 ]
 
-const Sort = () => {
+const Sort:React.FC = () => {
 
     const dispatch = useDispatch();
-    const sortingType = useSelector((state) => state.filter.sortingType)
+    const sortingType = useSelector((state: any) => state.filter.sortingType)
 
 
     const [openPopup, setOpenPopup] = React.useState(false)
-    const sortRef = React.useRef();
+    const sortRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
-            const handleClickOutside = (event) => {
+            const handleClickOutside = (event: any) => {
                 if (!event.composedPath().includes(sortRef.current)) {
                     setOpenPopup(false)
                 }
@@ -39,7 +44,7 @@ const Sort = () => {
     )
 
 
-    const onClickSort = (sortingType) => {
+    const onClickSort = (sortingType:SortItem) => {
         dispatch(setSortingType(sortingType))
         setOpenPopup(false)
     }

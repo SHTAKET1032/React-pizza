@@ -1,6 +1,11 @@
 import React from "react";
 
-const Categories = ({value, onClickCategory}) => {
+type CategoriesProp = {
+    value: number;
+    onClickCategory: any;
+}
+
+const Categories: React.FC<CategoriesProp> = ({value, onClickCategory}) => {
 
     const categories = ["Все", "Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"]
 

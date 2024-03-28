@@ -7,10 +7,10 @@ import headerLogo from "../../assets/img/pizza-logo.svg"
 import Search from "../search/Search"
 
 
-const Header = () => {
+const Header: React.FC = () => {
 
-    const totalPrice = useSelector((state) => state.cart.totalPrice);
-    const totalCount = useSelector((state) => state.cart.items.reduce((acc, item) => {
+    const totalPrice = useSelector((state: any) => state.cart.totalPrice);
+    const totalCount = useSelector((state: any) => state.cart.items.reduce((acc: number, item: any) => {
             return item.count + acc;
         }, 0)
     );

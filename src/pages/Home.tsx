@@ -9,16 +9,17 @@ import PizzaBlock from "../components/pizzaBlock/PizzaBlock"
 import PizzaLoader from "../components/pizzaBlock/PizzaLoader"
 
 
-const Home = () => {
+const Home:React.FC = () => {
 
     const dispatch = useDispatch();
-    const valueForSearch = useSelector((state) => state.filter.valueForSearch);
-    const categoryId = useSelector((state) => state.filter.categoryId);
-    const sortingType = useSelector((state) => state.filter.sortingType);
-    const {data, status} = useSelector((state) => state.pizza);
+    const valueForSearch = useSelector((state: any) => state.filter.valueForSearch);
+    const categoryId = useSelector((state: any) => state.filter.categoryId);
+    const sortingType = useSelector((state: any) => state.filter.sortingType);
+    const {data, status} = useSelector((state: any) => state.pizza);
 
 
-    const onClickCategory = (id) => {
+
+    const onClickCategory = (id: number) => {
         dispatch(setCategoryId(id))
     }
 
@@ -26,7 +27,9 @@ const Home = () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const sortBy = sortingType.sortProperty.replace("-", "");
         const order = sortingType.sortProperty.includes("-") ? "asc" : "desc";
-        dispatch(fetchPizzas({category, sortBy, order, valueForSearch}));
+        dispatch
+        //@ts-ignore
+        (fetchPizzas({category, sortBy, order, valueForSearch}));
     }
 
 
@@ -36,7 +39,7 @@ const Home = () => {
 
 
     const loader = [...new Array(10)].map((_, index) => <PizzaLoader key={index}/>);
-    const pizzas = data.map((item) => <PizzaBlock key={item.id}{...item}/>);
+    const pizzas = data.map((item:any) => <PizzaBlock key={item.id}{...item}/>);
 
 
     return (
