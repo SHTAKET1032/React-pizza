@@ -30,7 +30,7 @@ const Search:React.FC = () => {
         []
     )
 
-    const onChangeLocalInput = (event: any) => {
+    const onChangeLocalInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLocalValue(event.target.value);
         onChangeGlobalInput(event.target.value)
     }
